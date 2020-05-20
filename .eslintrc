@@ -6,9 +6,19 @@
     "node": true
   },
   "rules": {
-    "arrow-parens": "off",
     "comma-dangle": "off",
-    "require-jsdoc": "off"
+    "require-jsdoc": "off",
+    "object-curly-spacing": [2, "always", {
+      "objectsInObjects": true,
+      "arraysInObjects": true
+    }],
+    "arrow-parens": ["warn", "as-needed"],
+    "operator-linebreak": "off",
+    "max-len": ["error", {
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": true
+    }],
+    "linebreak-style": [2, "unix"]
   },
   "extends": ["eslint:recommended", "google"]
 }
