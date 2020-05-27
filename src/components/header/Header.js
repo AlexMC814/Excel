@@ -25,7 +25,7 @@ class Header extends ExcelComponent {
   }
 
   onClick(event) {
-    console.log('Formula: onInput', event.target);
+    // console.log('Formula: onInput', event.target);
   }
 }
 
