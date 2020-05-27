@@ -1,5 +1,5 @@
 const path = require('path');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -13,7 +13,8 @@ const jsLoaders = () => {
       loader: 'babel-loader',
       options: {
         presets: ['@babel/preset-env'],
-        plugins: ['@babel/plugin-proposal-class-properties']
+        presets: ['@babel/preset-env'],
+        plugins: ['@babel/plugin-proposal-class-properties'],
       },
     },
   ];
@@ -25,9 +26,9 @@ const jsLoaders = () => {
   return loaders;
 };
 
-const filename = (ext) => isDev ? `bundle.${ext}` : `bundle.[hash].${ext}`;
+const filename = ext => (isDev ? `bundle.${ext}` : `bundle.[hash].${ext}`);
 
-module.exports ={
+module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
   entry: ['@babel/polyfill', './index.js'],
