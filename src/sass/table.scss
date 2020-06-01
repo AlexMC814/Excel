@@ -25,6 +25,7 @@
     border: 1px solid $border-color;
     background: #f8f9fa;
     border-top: none;
+    pointer-events: none;
   }
 
   .row-data {
@@ -42,6 +43,7 @@
     border-top: 0;
     border-left: 0;
     position: relative;
+    pointer-events: none;
   }
 
   .col-resize, .row-resize {
@@ -51,6 +53,7 @@
     background: $primary-color;
     opacity: 0;
     z-index: 1000;
+    pointer-events: auto;
 
     &:hover {
       opacity: 1 !important;
