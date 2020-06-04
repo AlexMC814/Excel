@@ -8,7 +8,8 @@
     "comma-dangle": "off",
     "require-jsdoc": "off",
     "no-unused-vars": "warn",
-    "no-console": "warn",
-    "func-names": "off"
+//    "no-console": "warn",
+    "func-names": "off",
+    "max-len": ["warn", { "code": 80 }]
   }
 }
