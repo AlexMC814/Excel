@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
@@ -12,7 +13,6 @@ const jsLoaders = () => {
     {
       loader: 'babel-loader',
       options: {
-        presets: ['@babel/preset-env'],
         presets: ['@babel/preset-env'],
         plugins: ['@babel/plugin-proposal-class-properties'],
       },
@@ -65,6 +65,9 @@ module.exports = {
     ]),
     new MiniCssExtractPlugin({
       filename: filename('css'),
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
     }),
   ],
   module: {
